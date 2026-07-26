@@ -30,6 +30,7 @@ const shopItems = [
 
 
     // Steam激活码
+    { series: "steam", name: "魔塔地牢 Steam激活码", desc: "Steam游戏激活码兑换", price: 15, redeemable: true },
     { series: "steam", name: "薛定谔迷宫 Steam激活码", desc: "Steam游戏激活码兑换", price: 11.88, redeemable: true },
     { series: "steam", name: "转生魔塔 Steam激活码", desc: "Steam游戏激活码兑换", price: 18, redeemable: true },
 
