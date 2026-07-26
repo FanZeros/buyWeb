@@ -13,7 +13,7 @@ const shopItems = [
     { series: "dungeon", name: "永久自选+4", desc: "额外自选技能/装备个数，通关后可用，可多次叠加", price: 55.55, redeemable: true },
     { series: "dungeon", name: "永久自选+10", desc: "额外自选技能/装备个数，通关后可用，可多次叠加", price: 133.32, redeemable: true },
     { series: "dungeon", name: "购买定制技能装备", desc: "无需消耗自选点数，购买后菜单一键兑换。详情下载表格查看", price: "60起", redeemable: true, link: "http://zeros.group/dz.xlsx" },
-    { series: "dungeon", name: "支持者包【角色+DLC】", desc: "解锁全部35+角色 + 7个DLC + 初始奖励15级 + 游戏CG解锁", price: 40.88, redeemable: true },
+    { series: "dungeon", name: "支持者包【角色+DLC】", desc: "解锁全部35+角色 + 7个DLC + 初始奖励15级 + 游戏CG解锁", price: 40.88, redeemable: true, details: "【角色直接解锁】刺客、魔法师、召唤师、亡灵术士、骑士、光明之魂、昆仑仙女、牧师、夜行义贼、九州帝皇、占卜师、圣女、公会主席、妖狐、文脉传承者、道法使徒、亚斯、森之精灵、狂战士、魔法少女、追光剑士、商人、炼金术师、乐子仙人、狩魔人、堕天幻剑、吸血鬼、沙漠猎人、空桑掌门、百花谷主、界青暗主、记录员、试验机器人一号、幻想召唤师、血之舞 + 后续新角色\n【DLC直接解锁】初始装备宝箱、额外BOSS地图、困难系数、技能树模式、天空之城、火山内部、极寒之地\n【初始奖励】等级解锁至15级\n【游戏CG解锁】剑士_王国冒险者、刺客_屋檐隐狼、魔法师_秘法前召、召唤师_月夜兔兔/密林环蛇、亡灵术士_塔楼幽灵、光明之魂_史莱姆剑、牧师_教堂绿影、圣女_圣神之剑、占卜师_星空占卜、工会主席_枪械精通/夜雪奋战、妖狐_草地暖阳/雪夜冷狐 等" },
 
 
     // 魔塔勇者系列
@@ -76,6 +76,7 @@ function renderShop(series) {
             <span class="item-series">${seriesNames[item.series]}</span>
             <div class="item-name">${item.name}</div>
             <div class="item-desc">${item.desc}</div>
+            ${item.details ? `<details class="item-details"><summary>查看详细内容</summary><div class="item-details-content">${item.details.replace(/\n/g, '<br>')}</div></details>` : ''}
             ${item.link ? `<a class="item-link" href="${item.link}" target="_blank">下载详情表格</a>` : ''}
             <div class="item-price">${formatPrice(item.price)}</div>
             ${item.redeemable ? '<span class="redeem-badge">可捐款兑换</span>' : ''}

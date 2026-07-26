@@ -396,6 +396,35 @@ body {
     line-height: 1.5;
 }
 
+.shop-item .item-details {
+    margin-bottom: 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.shop-item .item-details summary {
+    font-size: 0.78rem;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    font-weight: 500;
+    background: rgba(99, 102, 241, 0.04);
+}
+
+.shop-item .item-details summary:hover {
+    background: rgba(99, 102, 241, 0.08);
+}
+
+.shop-item .item-details-content {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    padding: 0.6rem;
+    background: rgba(99, 102, 241, 0.02);
+    border-top: 1px solid var(--border);
+}
+
 .shop-item .item-link {
     display: inline-block;
     font-size: 0.8rem;
