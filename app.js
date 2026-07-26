@@ -2,13 +2,13 @@
 // price 统一为原价（捐款兑换所需金额）
 const shopItems = [
     // 魔塔地牢系列
-    { series: "dungeon", name: "魔塔地牢新手支持包", desc: "地牢探险者*3天 + 15000灵魂 + 100地牢碎片（限购一次）", price: 12, redeemable: true },
-    { series: "dungeon", name: "魔塔地牢-浅水沼泽DLC", desc: "解锁隐藏第六区域：浅水沼泽，拯救远古龙获取远古水晶", price: 8, redeemable: true },
-    { series: "dungeon", name: "地牢探险者周卡【7天】", desc: "80地牢碎片 + 7日探险者时长，灵魂获得×2 + 每日12碎片", price: 7.20, redeemable: true },
-    { series: "dungeon", name: "地牢探险者月卡【30天】", desc: "360地牢碎片 + 30日探险者时长，灵魂获得×2 + 每日12碎片", price: 25, redeemable: true },
-    { series: "dungeon", name: "地牢探险者永久卡", desc: "10000地牢碎片 + 永久探险者，灵魂×2 + 每日12碎片", price: 125, redeemable: true },
-    { series: "dungeon", name: "魔塔地牢-基础组合包", desc: "装备栏永久解锁×3 + 三件强力装备（破魔刀/隐形护盾/双刀）+ 永久钥匙包", price: 25, redeemable: true },
-    { series: "dungeon", name: "Steam奖励获得礼包【手机端用】", desc: "【Steam游戏本体】6000灵魂 + 永久200%灵魂获取 + 蒸汽戒指[Ex] + 魔王宝藏DLC + 自定义种子 + 龙年坐骑", price: 15, redeemable: true },
+    { series: "dungeon", name: "魔塔地牢新手支持包", desc: "地牢探险者*3天 + 15000灵魂 + 100地牢碎片（限购一次）", price: 12, redeemable: true, details: "获得"地牢探险者"*3天 + 15000灵魂 + 100地牢碎片\n"地牢探险者"生效期间：灵魂获得×2，并且每日获得12地牢碎片" },
+    { series: "dungeon", name: "魔塔地牢-浅水沼泽DLC", desc: "解锁隐藏第六区域：浅水沼泽", price: 8, redeemable: true, details: "增加隐藏的第六区域：浅水沼泽\n拯救被魔王控制的远古龙，解锁强大的远古水晶，获得更多奖励！\n（最新版本才可以使用）" },
+    { series: "dungeon", name: "地牢探险者周卡【7天】", desc: "80地牢碎片 + 7日探险者时长", price: 7.20, redeemable: true, details: "立刻获得80地牢碎片 + 7日"地牢探险者"时长\n"地牢探险者"生效期间：灵魂获得×2（倍率与其他灵魂获得倍率累乘），并且每日获得12×地牢碎片\n同时在《薛定谔迷宫》生效：离线金币收益最大时长从2h→24h，同时收益翻倍\n多次购买时总时长相加，每日奖励不叠加" },
+    { series: "dungeon", name: "地牢探险者月卡【30天】", desc: "360地牢碎片 + 30日探险者时长", price: 25, redeemable: true, details: "立刻获得360地牢碎片 + 30日"地牢探险者"时长\n"地牢探险者"生效期间：灵魂获得×2（倍率与其他灵魂获得倍率累乘），并且每日获得12×地牢碎片\n同时在《薛定谔迷宫》生效：离线金币收益最大时长从2h→24h，同时收益翻倍\n多次购买时总时长相加，每日奖励不叠加" },
+    { series: "dungeon", name: "地牢探险者永久卡", desc: "10000地牢碎片 + 永久探险者", price: 125, redeemable: true, details: "立刻获得10000地牢碎片 + 10000日"地牢探险者"时长（约等于永久）\n"地牢探险者"生效期间：灵魂获得×2（倍率与其他灵魂获得倍率累乘），并且每日获得12×地牢碎片\n同时在《薛定谔迷宫》生效：离线金币收益最大时长从2h→24h，同时收益翻倍" },
+    { series: "dungeon", name: "魔塔地牢-基础组合包", desc: "装备栏×3 + 三件强力装备 + 永久钥匙包", price: 25, redeemable: true, details: "兑换码包含以下物品：\n1. 装备栏：额外装备栏×3个\n2. 装备：破魔刀【破防20%】\n3. 装备：隐形护盾【极限锁血】\n4. 装备：双刀【攻击伤害+60%】\n5. 钥匙包：黄钥匙×4 + 蓝钥匙×1\n\n仅可在【魔塔地牢系列】使用（6勇者、魔塔勇者刺客篇/骑士篇请勿购买）" },
+    { series: "dungeon", name: "Steam奖励获得礼包【手机端用】", desc: "【Steam游戏本体】手机端获取Steam专属奖励", price: 15, redeemable: true, details: "没买电脑版（Steam）但想拿到Steam购买的专属奖励？直接购买兑换！\n包含：\n① 6000灵魂\n② 游戏内200%的灵魂获取，永久\n③ 蒸汽戒指【Ex】，永久\n④ 魔王的宝藏DLC直接获得\n⑤ 自定义种子功能\n⑥ 龙年限定：红龙坐骑\n⑦ 版本追加奖励（自动补领之前版本奖励450+碎片）\n\n已购买Steam魔塔地牢游戏请勿再购买此商品（已包含）！" },
     { series: "dungeon", name: "永久自选+1", desc: "额外自选技能/装备个数，通关后可用，可多次叠加", price: 14.44, redeemable: true },
     { series: "dungeon", name: "永久自选+4", desc: "额外自选技能/装备个数，通关后可用，可多次叠加", price: 55.55, redeemable: true },
     { series: "dungeon", name: "永久自选+10", desc: "额外自选技能/装备个数，通关后可用，可多次叠加", price: 133.32, redeemable: true },
@@ -17,10 +17,10 @@ const shopItems = [
 
 
     // 魔塔勇者系列
-    { series: "hero", name: "勇者钻石包", desc: "600钻石兑换码，可购买新角色、钥匙及装备", price: 7.88, redeemable: true },
-    { series: "hero", name: "勇者钻石箱", desc: "1888钻石兑换码 + Zeros游戏内测资格", price: 22.88, redeemable: true },
-    { series: "hero", name: "勇者钻石矿", desc: "3250钻石兑换码 + Zeros游戏内测资格", price: 38.88, redeemable: true },
-    { series: "hero", name: "勇者钻石柜", desc: "6880钻石兑换码 + Zeros游戏内测资格 + 游戏致谢名单", price: 78.88, redeemable: true },
+    { series: "hero", name: "勇者钻石包", desc: "600钻石兑换码，可购买新角色、钥匙及装备", price: 7.88, redeemable: true, details: "包含600钻石的兑换码\n可用于购买新角色、钥匙以及装备\n仅限在游戏《魔勇亡灵术士》《魔塔勇者xx篇》和《魔塔与6勇者》使用\n需要联网使用兑换码" },
+    { series: "hero", name: "勇者钻石箱", desc: "1888钻石兑换码 + Zeros游戏内测资格", price: 22.88, redeemable: true, details: "1. 包含1888钻石的兑换码\n2. Zeros游戏内测资格（加入游戏内测群）\n仅限在游戏《魔勇亡灵术士》《魔塔勇者xx篇》和《魔塔与6勇者》使用\n需要联网使用兑换码" },
+    { series: "hero", name: "勇者钻石矿", desc: "3250钻石兑换码 + Zeros游戏内测资格", price: 38.88, redeemable: true, details: "1. 包含3250钻石的兑换码，可用于购买新角色、钥匙以及装备\n2. Zeros游戏内测资格（加入游戏内测群）\n仅限在游戏《魔勇亡灵术士》《魔塔勇者xx篇》和《魔塔与6勇者》使用\n需要联网使用兑换码" },
+    { series: "hero", name: "勇者钻石柜", desc: "6880钻石兑换码 + Zeros游戏内测资格 + 游戏致谢名单", price: 78.88, redeemable: true, details: "1. 包含6880钻石的兑换码，可用于购买新角色、钥匙以及装备\n2. Zeros游戏内测资格（加入游戏内测群）\n3. 加入游戏致谢名单\n仅限在游戏《魔勇亡灵术士》《魔塔勇者xx篇》和《魔塔与6勇者》使用\n需要联网使用兑换码" },
 
     // 转生魔塔系列
     { series: "reborn", name: "600*神魔水晶【10抽】+6电量", desc: "基础抽卡礼包，附赠6点电量", price: 6, redeemable: true },
