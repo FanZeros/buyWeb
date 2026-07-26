@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>捐款兑换 - 魔塔游戏系列</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 顶部横幅 -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>捐款代替购买</h1>
+            <p class="subtitle">用本年度公益捐款截图，兑换游戏额外内容</p>
+        </div>
+    </header>
+
+    <!-- 导航标签 -->
+    <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="redeem">捐款兑换</button>
+        <button class="tab-btn" data-tab="shop">内容商店</button>
+    </nav>
+
+    <!-- 兑换页面 -->
+    <section id="redeem" class="tab-content active">
+        <div class="card how-it-works">
+            <h2>如何兑换</h2>
+            <ol class="steps">
+                <li>
+                    <span class="step-icon">1</span>
+                    <div>
+                        <strong>进行公益捐款</strong>
+                        <p>向任意正规公益机构捐款（不限金额）</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="step-icon">2</span>
+                    <div>
+                        <strong>截图保存凭证</strong>
+                        <p>保留本年度捐款成功的截图</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="step-icon">3</span>
+                    <div>
+                        <strong>提交兑换申请</strong>
+                        <p>上传截图并选择想要兑换的内容</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="card redeem-form">
+            <h2>提交兑换</h2>
+            <form id="redeemForm">
+                <div class="form-group">
+                    <label for="gameId">游戏内ID</label>
+                    <input type="text" id="gameId" placeholder="请输入您的游戏内ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="gameSeries">选择游戏系列</label>
+                    <select id="gameSeries" required>
+                        <option value="">-- 请选择 --</option>
+                        <option value="dungeon">魔塔地牢系列</option>
+                        <option value="hero">魔塔勇者系列</option>
+                        <option value="reborn">转生魔塔系列</option>
+                        <option value="other">其他系列</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="redeemItem">兑换内容</label>
+                    <select id="redeemItem" required>
+                        <option value="">-- 请先选择游戏系列 --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>上传捐款截图</label>
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-placeholder" id="uploadPlaceholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                            <p>点击或拖拽上传截图</p>
+                            <span class="upload-hint">支持 JPG、PNG 格式</span>
+                        </div>
+                        <img id="previewImg" class="preview-img hidden" alt="预览">
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contact">联系方式（可选）</label>
+                    <input type="text" id="contact" placeholder="QQ/微信/邮箱，方便我们联系您">
+                </div>
+                <button type="submit" class="btn-primary">提交兑换申请</button>
+            </form>
+        </div>
+
+        <div class="card faq">
+            <h2>常见问题</h2>
+            <details>
+                <summary>捐款金额有要求吗？</summary>
+                <p>没有金额限制，任意金额的捐款都可以参与兑换。我们鼓励力所能及的善举。</p>
+            </details>
+            <details>
+                <summary>哪些公益机构的捐款有效？</summary>
+                <p>任何正规注册的公益慈善机构均可，包括但不限于：中国红十字会、腾讯公益、支付宝公益、壹基金等。</p>
+            </details>
+            <details>
+                <summary>兑换需要多久处理？</summary>
+                <p>我们会在 1-3 个工作日内审核您的截图并发放兑换内容。</p>
+            </details>
+            <details>
+                <summary>每年可以兑换几次？</summary>
+                <p>每个账号每年可兑换一次，每次可选择一项内容。</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- 商店页面 -->
+    <section id="shop" class="tab-content">
+        <div class="series-filter">
+            <button class="filter-btn active" data-series="all">全部</button>
+            <button class="filter-btn" data-series="dungeon">魔塔地牢</button>
+            <button class="filter-btn" data-series="hero">魔塔勇者</button>
+            <button class="filter-btn" data-series="reborn">转生魔塔</button>
+            <button class="filter-btn" data-series="other">其他</button>
+        </div>
+
+        <div class="shop-grid" id="shopGrid">
+            <!-- 动态生成 -->
+        </div>
+    </section>
+
+    <!-- 提交成功弹窗 -->
+    <div class="modal hidden" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon success">&#10003;</div>
+            <h3>提交成功！</h3>
+            <p>我们已收到您的兑换申请，将在 1-3 个工作日内处理。</p>
+            <button class="btn-primary" onclick="closeModal()">知道了</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 魔塔游戏系列 | 捐款代替购买计划</p>
+        <p class="footer-note">本活动旨在鼓励玩家参与公益，用善举解锁游戏内容</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
