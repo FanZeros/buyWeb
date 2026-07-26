@@ -7,10 +7,10 @@ const shopItems = [
     { series: "dungeon", name: "无限体力月卡", desc: "30天内体力无限", price: "¥30", original: "¥30", redeemable: false },
 
     // 魔塔勇者系列
-    { series: "hero", name: "勇者之翼", desc: "飞行能力，跳过部分障碍", price: "¥8", original: "¥12", redeemable: true },
-    { series: "hero", name: "远古宝藏地图", desc: "揭示所有隐藏宝箱位置", price: "¥6", original: "¥8", redeemable: true },
-    { series: "hero", name: "双倍经验卷轴×10", desc: "战斗经验翻倍，持续1小时/张", price: "¥15", original: "¥20", redeemable: true },
-    { series: "hero", name: "英雄试炼场", desc: "高难度挑战副本，奖励丰厚", price: "¥10", original: "¥15", redeemable: true },
+    { series: "hero", name: "勇者钻石包", desc: "600钻石兑换码，可购买新角色、钥匙及装备", price: "¥6.88", original: "¥7.88", redeemable: true },
+    { series: "hero", name: "勇者钻石箱", desc: "1888钻石兑换码 + Zeros游戏内测资格", price: "¥22.88", original: "", redeemable: true },
+    { series: "hero", name: "勇者钻石矿", desc: "3250钻石兑换码 + Zeros游戏内测资格", price: "¥32.88", original: "¥38.88", redeemable: true },
+    { series: "hero", name: "勇者钻石柜", desc: "6880钻石兑换码 + Zeros游戏内测资格 + 游戏致谢名单", price: "¥68.88", original: "¥78.88", redeemable: true },
 
     // 转生魔塔系列
     { series: "reborn", name: "600*神魔水晶【10抽】+6电量", desc: "基础抽卡礼包，附赠6点电量", price: "¥6", original: "", redeemable: true },
