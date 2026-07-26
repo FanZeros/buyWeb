@@ -13,10 +13,10 @@ const shopItems = [
     { series: "hero", name: "英雄试炼场", desc: "高难度挑战副本，奖励丰厚", price: "¥10", original: "¥15", redeemable: true },
 
     // 转生魔塔系列
-    { series: "reborn", name: "命运之轮", desc: "转生时额外保留3项属性", price: "¥12", original: "¥18", redeemable: true },
-    { series: "reborn", name: "时空回溯石×5", desc: "撤回最近一步操作", price: "¥8", original: "¥12", redeemable: true },
-    { series: "reborn", name: "隐藏结局·轮回", desc: "解锁第四个隐藏结局线", price: "¥6", original: "¥10", redeemable: true },
-    { series: "reborn", name: "全角色解锁", desc: "一次性解锁所有可玩角色", price: "¥25", original: "¥38", redeemable: true },
+    { series: "reborn", name: "600*神魔水晶【10抽】+6电量", desc: "基础抽卡礼包，附赠6点电量", price: "¥6", original: "", redeemable: true },
+    { series: "reborn", name: "2550*神魔水晶【42抽】+25电量", desc: "超值抽卡礼包，附赠25点电量", price: "¥25", original: "", redeemable: true },
+    { series: "reborn", name: "8000*神魔水晶【133抽】+78电量", desc: "豪华抽卡礼包，附赠78点电量", price: "¥78", original: "", redeemable: true },
+    { series: "reborn", name: "19500*神魔水晶【325抽】+188电量", desc: "至尊抽卡礼包，附赠188点电量", price: "¥188", original: "", redeemable: true },
 
     // 其他系列
     { series: "other", name: "像素画框合集", desc: "12个装饰用像素艺术画框", price: "¥5", original: "¥8", redeemable: true },
