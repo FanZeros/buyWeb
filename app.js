@@ -11,6 +11,7 @@ const shopItems = [
     { series: "dungeon", name: "永久自选机会", desc: "额外自选技能/装备个数，通关后可用，可多次叠加购买", price: "¥14.44起", original: "", redeemable: true },
     { series: "dungeon", name: "购买定制技能装备", desc: "无需消耗自选点数，购买后菜单一键兑换。详情下载表格查看", price: "¥60起", original: "", redeemable: true, link: "http://zeros.group/dz.xlsx" },
     { series: "dungeon", name: "支持者包【角色+DLC】", desc: "解锁全部35+角色 + 7个DLC + 初始奖励15级 + 游戏CG解锁", price: "¥40.88", original: "", redeemable: true },
+    { series: "dungeon", name: "薛定谔迷宫 Steam激活码", desc: "Steam游戏激活码兑换", price: "¥4.98", original: "¥11.88", redeemable: true },
 
     // 魔塔勇者系列
     { series: "hero", name: "勇者钻石包", desc: "600钻石兑换码，可购买新角色、钥匙及装备", price: "¥6.88", original: "¥7.88", redeemable: true },
@@ -23,6 +24,7 @@ const shopItems = [
     { series: "reborn", name: "2550*神魔水晶【42抽】+25电量", desc: "超值抽卡礼包，附赠25点电量", price: "¥25", original: "", redeemable: true },
     { series: "reborn", name: "8000*神魔水晶【133抽】+78电量", desc: "豪华抽卡礼包，附赠78点电量", price: "¥78", original: "", redeemable: true },
     { series: "reborn", name: "19500*神魔水晶【325抽】+188电量", desc: "至尊抽卡礼包，附赠188点电量", price: "¥188", original: "", redeemable: true },
+    { series: "reborn", name: "转生魔塔 Steam激活码", desc: "Steam游戏激活码兑换", price: "¥8.64", original: "¥18", redeemable: true },
 
     // 其他系列
     { series: "other", name: "敬请期待", desc: "更多内容筹备中...", price: "", original: "", redeemable: false },
