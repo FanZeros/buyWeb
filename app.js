@@ -6,6 +6,9 @@ const shopItems = [
     { series: "dungeon", name: "地牢探险者周卡【7天】", desc: "80地牢碎片 + 7日探险者时长，灵魂获得×2 + 每日12碎片", price: "¥7.20", original: "", redeemable: true },
     { series: "dungeon", name: "地牢探险者月卡【30天】", desc: "360地牢碎片 + 30日探险者时长，灵魂获得×2 + 每日12碎片", price: "¥25", original: "", redeemable: true },
     { series: "dungeon", name: "地牢探险者永久卡", desc: "10000地牢碎片 + 永久探险者，灵魂×2 + 每日12碎片", price: "¥125", original: "", redeemable: true },
+    { series: "dungeon", name: "魔塔地牢-基础组合包", desc: "装备栏永久解锁×3 + 三件强力装备（破魔刀/隐形护盾/双刀）+ 永久钥匙包", price: "¥25", original: "", redeemable: true },
+    { series: "dungeon", name: "Steam奖励获得礼包【手机端用】", desc: "【Steam游戏本体】6000灵魂 + 永久200%灵魂获取 + 蒸汽戒指[Ex] + 魔王宝藏DLC + 自定义种子 + 龙年坐骑", price: "¥15", original: "", redeemable: true },
+    { series: "dungeon", name: "永久自选机会", desc: "额外自选技能/装备个数，通关后可用，可多次叠加购买", price: "¥14.44起", original: "", redeemable: true },
     { series: "dungeon", name: "购买定制技能装备", desc: "无需消耗自选点数，购买后菜单一键兑换。详情下载表格查看", price: "¥60起", original: "", redeemable: false, link: "http://zeros.group/dz.xlsx" },
     { series: "dungeon", name: "支持者包【角色+DLC】", desc: "解锁全部35+角色 + 7个DLC + 初始奖励15级 + 游戏CG解锁", price: "¥40.88", original: "", redeemable: true },
 
