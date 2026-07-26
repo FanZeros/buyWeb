@@ -325,6 +325,14 @@ body {
     margin-bottom: 0.75rem;
 }
 
+.shop-item .item-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+}
+
 .shop-item .item-price {
     font-size: 0.9rem;
     font-weight: 600;

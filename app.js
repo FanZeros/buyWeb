@@ -1,10 +1,13 @@
 // ===== 商品数据 =====
 const shopItems = [
     // 魔塔地牢系列
-    { series: "dungeon", name: "地牢探索者皮肤包", desc: "包含3套稀有角色外观", price: "¥12", original: "¥18", redeemable: true },
-    { series: "dungeon", name: "隐藏关卡·深渊", desc: "解锁地下5层隐藏区域", price: "¥6", original: "¥10", redeemable: true },
-    { series: "dungeon", name: "传奇装备礼包", desc: "获得5件传奇品质装备", price: "¥18", original: "¥25", redeemable: true },
-    { series: "dungeon", name: "无限体力月卡", desc: "30天内体力无限", price: "¥30", original: "¥30", redeemable: false },
+    { series: "dungeon", name: "魔塔地牢新手支持包", desc: "地牢探险者*3天 + 15000灵魂 + 100地牢碎片（限购一次）", price: "¥6", original: "¥12", redeemable: true },
+    { series: "dungeon", name: "魔塔地牢-浅水沼泽DLC", desc: "解锁隐藏第六区域：浅水沼泽，拯救远古龙获取远古水晶", price: "¥8", original: "", redeemable: true },
+    { series: "dungeon", name: "地牢探险者周卡【7天】", desc: "80地牢碎片 + 7日探险者时长，灵魂获得×2 + 每日12碎片", price: "¥7.20", original: "", redeemable: true },
+    { series: "dungeon", name: "地牢探险者月卡【30天】", desc: "360地牢碎片 + 30日探险者时长，灵魂获得×2 + 每日12碎片", price: "¥25", original: "", redeemable: true },
+    { series: "dungeon", name: "地牢探险者永久卡", desc: "10000地牢碎片 + 永久探险者，灵魂×2 + 每日12碎片", price: "¥125", original: "", redeemable: true },
+    { series: "dungeon", name: "购买定制技能装备", desc: "无需消耗自选点数，购买后菜单一键兑换。详情下载表格查看", price: "¥60起", original: "", redeemable: false, link: "http://zeros.group/dz.xlsx" },
+    { series: "dungeon", name: "支持者包【角色+DLC】", desc: "解锁全部35+角色 + 7个DLC + 初始奖励15级 + 游戏CG解锁", price: "¥40.88", original: "", redeemable: true },
 
     // 魔塔勇者系列
     { series: "hero", name: "勇者钻石包", desc: "600钻石兑换码，可购买新角色、钥匙及装备", price: "¥6.88", original: "¥7.88", redeemable: true },
@@ -19,9 +22,7 @@ const shopItems = [
     { series: "reborn", name: "19500*神魔水晶【325抽】+188电量", desc: "至尊抽卡礼包，附赠188点电量", price: "¥188", original: "", redeemable: true },
 
     // 其他系列
-    { series: "other", name: "像素画框合集", desc: "12个装饰用像素艺术画框", price: "¥5", original: "¥8", redeemable: true },
-    { series: "other", name: "BGM原声大碟", desc: "全系列游戏音乐离线收听", price: "¥15", original: "¥20", redeemable: true },
-    { series: "other", name: "开发者日志", desc: "查看游戏背后的开发故事", price: "免费", original: "", redeemable: false },
+    { series: "other", name: "敬请期待", desc: "更多内容筹备中...", price: "", original: "", redeemable: false },
 ];
 
 const seriesNames = {
@@ -55,6 +56,7 @@ function renderShop(series) {
             <span class="item-series">${seriesNames[item.series]}</span>
             <div class="item-name">${item.name}</div>
             <div class="item-desc">${item.desc}</div>
+            ${item.link ? `<a class="item-link" href="${item.link}" target="_blank">下载详情表格</a>` : ''}
             <div class="item-price">
                 ${item.price}
                 ${item.original ? `<span class="original">${item.original}</span>` : ''}
