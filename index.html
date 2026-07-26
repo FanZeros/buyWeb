@@ -37,64 +37,52 @@
                     <span class="step-icon">2</span>
                     <div>
                         <strong>截图保存凭证</strong>
-                        <p>保留本年度捐款成功的截图</p>
+                        <p>保留本年度捐款成功的截图（需包含捐款金额、时间、平台信息）</p>
                     </div>
                 </li>
                 <li>
                     <span class="step-icon">3</span>
                     <div>
-                        <strong>提交兑换申请</strong>
-                        <p>上传截图并选择想要兑换的内容</p>
+                        <strong>加群联系作者</strong>
+                        <p>加入QQ群后，私聊作者<strong>零殇</strong>发送截图并告知想兑换的内容</p>
                     </div>
                 </li>
             </ol>
+            <a href="https://zeros.group/group" target="_blank" class="btn-primary btn-join-group">加入QQ群</a>
         </div>
 
-        <div class="card redeem-form">
-            <h2>提交兑换</h2>
-            <form id="redeemForm">
-                <div class="form-group">
-                    <label for="gameId">游戏内ID</label>
-                    <input type="text" id="gameId" placeholder="请输入您的游戏内ID" required>
-                </div>
-                <div class="form-group">
-                    <label for="gameSeries">选择游戏系列</label>
-                    <select id="gameSeries" required>
-                        <option value="">-- 请选择 --</option>
-                        <option value="dungeon">魔塔地牢系列</option>
-                        <option value="hero">魔塔勇者系列</option>
-                        <option value="reborn">转生魔塔系列</option>
-                        <option value="other">其他系列</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="redeemItem">兑换内容</label>
-                    <select id="redeemItem" required>
-                        <option value="">-- 请先选择游戏系列 --</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>上传捐款截图</label>
-                    <div class="upload-area" id="uploadArea">
-                        <div class="upload-placeholder" id="uploadPlaceholder">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                            <p>点击或拖拽上传截图</p>
-                            <span class="upload-hint">支持 JPG、PNG 格式</span>
-                        </div>
-                        <img id="previewImg" class="preview-img hidden" alt="预览">
-                        <input type="file" id="fileInput" accept="image/*" hidden>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="contact">联系方式（可选）</label>
-                    <input type="text" id="contact" placeholder="QQ/微信/邮箱，方便我们联系您">
-                </div>
-                <button type="submit" class="btn-primary">提交兑换申请</button>
-            </form>
+        <div class="card rules">
+            <h2>兑换规则</h2>
+            <ul class="rule-list">
+                <li>
+                    <span class="rule-icon ok">&#10003;</span>
+                    <span>捐款不限金额，任意正规公益机构均可（腾讯公益、支付宝公益、壹基金等）</span>
+                </li>
+                <li>
+                    <span class="rule-icon ok">&#10003;</span>
+                    <span>截图须为<strong>本年度</strong>的真实捐款记录</span>
+                </li>
+                <li>
+                    <span class="rule-icon ok">&#10003;</span>
+                    <span>每个账号每年可兑换一次，每次可选择一项内容</span>
+                </li>
+                <li>
+                    <span class="rule-icon ok">&#10003;</span>
+                    <span>提交截图即视为授权零殇用于公益宣传展示</span>
+                </li>
+                <li>
+                    <span class="rule-icon no">&#10007;</span>
+                    <span><strong>严禁伪造</strong>捐款截图，一经发现永久取消兑换资格</span>
+                </li>
+                <li>
+                    <span class="rule-icon no">&#10007;</span>
+                    <span><strong>严禁冒用他人</strong>捐款记录，必须是本人真实捐款</span>
+                </li>
+                <li>
+                    <span class="rule-icon no">&#10007;</span>
+                    <span>同一笔捐款<strong>不可重复使用</strong>，仅限兑换一次</span>
+                </li>
+            </ul>
         </div>
 
         <div class="card faq">
@@ -105,15 +93,19 @@
             </details>
             <details>
                 <summary>哪些公益机构的捐款有效？</summary>
-                <p>任何正规注册的公益慈善机构均可，包括但不限于：中国红十字会、腾讯公益、支付宝公益、壹基金等。</p>
+                <p>任何正规注册的公益慈善机构均可，包括但不限于：腾讯公益、支付宝公益、壹基金、中国扶贫基金会等。</p>
             </details>
             <details>
                 <summary>兑换需要多久处理？</summary>
-                <p>我们会在 1-3 个工作日内审核您的截图并发放兑换内容。</p>
+                <p>私聊零殇后，通常 1-3 个工作日内完成审核并发放。</p>
             </details>
             <details>
-                <summary>每年可以兑换几次？</summary>
-                <p>每个账号每年可兑换一次，每次可选择一项内容。</p>
+                <summary>截图会被用在哪里？</summary>
+                <p>提交的截图可能用于公益宣传展示（如群公告、社区帖子），以鼓励更多人参与。提交即视为授权。</p>
+            </details>
+            <details>
+                <summary>我找不到零殇怎么办？</summary>
+                <p>加入QQ群后，群主/管理员即为零殇，也可在群内@零殇。</p>
             </details>
         </div>
     </section>
@@ -133,15 +125,7 @@
         </div>
     </section>
 
-    <!-- 提交成功弹窗 -->
-    <div class="modal hidden" id="successModal">
-        <div class="modal-content">
-            <div class="modal-icon success">&#10003;</div>
-            <h3>提交成功！</h3>
-            <p>我们已收到您的兑换申请，将在 1-3 个工作日内处理。</p>
-            <button class="btn-primary" onclick="closeModal()">知道了</button>
-        </div>
-    </div>
+
 
     <footer>
         <p>&copy; 2025 魔塔游戏系列 | 捐款代替购买计划</p>
