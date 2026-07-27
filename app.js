@@ -29,10 +29,10 @@ const shopItems = [
     { series: "reborn", name: "19500*神魔水晶【325抽】+188电量", desc: "至尊抽卡礼包，附赠188点电量", price: 188, redeemable: true },
 
 
-    // Steam激活码
-    { series: "steam", name: "魔塔地牢 Steam激活码", desc: "Steam游戏激活码兑换", price: 15, redeemable: true },
-    { series: "steam", name: "薛定谔迷宫 Steam激活码", desc: "Steam游戏激活码兑换", price: 11.88, redeemable: true },
-    { series: "steam", name: "转生魔塔 Steam激活码", desc: "Steam游戏激活码兑换", price: 18, redeemable: true },
+    // Steam激活码（同时归属对应游戏系列 + 激活码分类）
+    { series: "dungeon", tags: ["dungeon", "steam"], name: "魔塔地牢 Steam激活码", desc: "Steam游戏激活码兑换", price: 15, redeemable: true },
+    { series: "dungeon", tags: ["dungeon", "steam"], name: "薛定谔迷宫 Steam激活码", desc: "Steam游戏激活码兑换", price: 11.88, redeemable: true },
+    { series: "reborn", tags: ["reborn", "steam"], name: "转生魔塔 Steam激活码", desc: "Steam游戏激活码兑换", price: 18, redeemable: true },
 
     // 其他系列
     { series: "other", name: "敬请期待", desc: "更多内容筹备中...", price: "", redeemable: false },
@@ -70,7 +70,9 @@ function formatPrice(price) {
 }
 
 function renderShop(series) {
-    const items = series === 'all' ? shopItems : shopItems.filter(item => item.series === series);
+    const items = series === 'all'
+        ? shopItems
+        : shopItems.filter(item => item.series === series || (item.tags && item.tags.includes(series)));
     shopGrid.innerHTML = items.map(item => `
         <div class="shop-item" data-series="${item.series}">
             <span class="item-series">${seriesNames[item.series]}</span>
