@@ -464,6 +464,13 @@ body {
     border-radius: 6px;
     font-weight: 600;
     letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.shop-item .redeem-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
 }
 
 /* ===== 页脚 ===== */

@@ -48,13 +48,17 @@ const seriesNames = {
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
 
+function switchTab(tabName) {
+    tabBtns.forEach(b => b.classList.remove('active'));
+    tabContents.forEach(c => c.classList.remove('active'));
+    const btn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+    if (btn) btn.classList.add('active');
+    const content = document.getElementById(tabName);
+    if (content) content.classList.add('active');
+}
+
 tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        tabBtns.forEach(b => b.classList.remove('active'));
-        tabContents.forEach(c => c.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.dataset.tab).classList.add('active');
-    });
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
 });
 
 // ===== 商品筛选 =====
@@ -84,13 +88,40 @@ function renderShop(series) {
     `).join('');
 }
 
+function switchFilter(series) {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    const btn = document.querySelector(`.filter-btn[data-series="${series}"]`);
+    if (btn) btn.classList.add('active');
+    renderShop(series);
+}
+
 filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderShop(btn.dataset.series);
-    });
+    btn.addEventListener('click', () => switchFilter(btn.dataset.series));
 });
+
+// ===== "可捐款兑换"点击跳转到兑换页 =====
+shopGrid.addEventListener('click', (e) => {
+    if (e.target.classList.contains('redeem-badge')) {
+        switchTab('redeem');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+});
+
+// ===== URL hash 路由 =====
+// 支持: #steam, #dungeon, #hero, #reborn, #redeem 等
+function handleHash() {
+    const hash = location.hash.replace('#', '');
+    if (!hash) return;
+    if (hash === 'redeem') {
+        switchTab('redeem');
+    } else if (seriesNames[hash] || hash === 'all') {
+        switchTab('shop');
+        switchFilter(hash);
+    }
+}
+
+window.addEventListener('hashchange', handleHash);
+handleHash();
 
 // 初始渲染
 renderShop('all');
