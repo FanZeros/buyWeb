@@ -396,6 +396,58 @@ body {
     line-height: 1.5;
 }
 
+/* ===== 子项列表（组合卡） ===== */
+.shop-item .sub-items {
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.shop-item .sub-item {
+    display: flex;
+    align-items: center;
+    padding: 0.55rem 0.7rem;
+    border-bottom: 1px solid var(--border);
+    gap: 0.4rem;
+}
+
+.shop-item .sub-item:last-child {
+    border-bottom: none;
+}
+
+.shop-item .sub-item-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.shop-item .sub-item-desc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    flex: 1;
+    min-width: 0;
+}
+
+.shop-item .sub-item-price {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+.shop-item .sub-item-price .donate-icon {
+    color: #e74c3c;
+    margin-right: 0.1rem;
+    font-size: 0.8em;
+}
+
+.shop-item.has-subitems {
+    grid-column: 1 / -1;
+}
+
 .shop-item .item-details {
     margin-bottom: 0.6rem;
     border: 1px solid var(--border);
