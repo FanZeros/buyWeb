@@ -52,6 +52,14 @@ const seriesNames = {
     other: "其他系列"
 };
 
+// ===== 系列说明 =====
+const seriesDescriptions = {
+    dungeon: "包含：魔塔地牢C（长期更新版）、薛定谔迷宫（地牢续作，挂机/刷宝）、魔塔地牢角色外传（刺客/妖狐/牧师篇）",
+    hero: "包含：魔塔与6勇者（长期更新版）、魔勇亡灵术士、魔塔勇者xx篇（传统魔塔童年回忆）",
+    reborn: "包含：转生魔塔（集合三消+肉鸽+割草元素的游戏）",
+    steam: "Zeros游戏的 Steam PC 平台激活码，激活后永久拥有",
+};
+
 // ===== 标签切换 =====
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
@@ -103,10 +111,19 @@ function renderShop(series) {
     `).join('');
 }
 
+const seriesDesc = document.getElementById('seriesDesc');
+
 function switchFilter(series) {
     filterBtns.forEach(b => b.classList.remove('active'));
     const btn = document.querySelector(`.filter-btn[data-series="${series}"]`);
     if (btn) btn.classList.add('active');
+    // 显示系列说明
+    if (series !== 'all' && seriesDescriptions[series]) {
+        seriesDesc.textContent = seriesDescriptions[series];
+        seriesDesc.classList.add('visible');
+    } else {
+        seriesDesc.classList.remove('visible');
+    }
     renderShop(series);
 }
 
