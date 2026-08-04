@@ -143,17 +143,21 @@ shopGrid.addEventListener('click', (e) => {
 // 支持: #steam, #dungeon, #hero, #reborn, #redeem 等
 function handleHash() {
     const hash = location.hash.replace('#', '');
-    if (!hash) return;
+    if (!hash) return false;
     if (hash === 'redeem') {
         switchTab('redeem');
+        return true;
     } else if (seriesNames[hash] || hash === 'all') {
         switchTab('shop');
         switchFilter(hash);
+        return true;
     }
+    return false;
 }
 
 window.addEventListener('hashchange', handleHash);
-handleHash();
 
-// 初始渲染
-renderShop('all');
+// 初始渲染：有 hash 则跳转对应分类，否则显示全部
+if (!handleHash()) {
+    renderShop('all');
+}
