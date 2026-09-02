@@ -69,25 +69,40 @@ body {
     position: relative;
 }
 
-.buy-now-link {
-    display: block;
+.buy-now-box {
     position: relative;
     margin: 1.4rem auto 0;
     max-width: 640px;
-    padding: 1rem 1.2rem;
-    font-size: 1.45rem;
-    font-weight: 800;
-    line-height: 1.4;
-    color: #fff;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.18);
-    border: 2px solid rgba(255, 255, 255, 0.7);
-    border-radius: 14px;
-    letter-spacing: 0.01em;
+    padding: 1.1rem 1.2rem 1.2rem;
+    background: #fff7ed;
+    border: 2px solid #fdba74;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(234, 88, 12, 0.18);
 }
 
-.buy-now-link.hidden {
+.buy-now-box.hidden {
     display: none;
+}
+
+.buy-now-text {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #9a3412;
+    margin-bottom: 0.85rem;
+}
+
+.buy-now-btn {
+    display: block;
+    width: 100%;
+    padding: 0.95rem 1rem;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.55rem;
+    font-weight: 800;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
 }
 
 /* ===== 标签导航 ===== */
@@ -699,9 +714,16 @@ footer {
         font-size: 2.5rem;
     }
 
-    .buy-now-link {
-        font-size: 1.7rem;
+    .buy-now-box {
         max-width: 720px;
+    }
+
+    .buy-now-text {
+        font-size: 1.3rem;
+    }
+
+    .buy-now-btn {
+        font-size: 1.85rem;
     }
 
     .tab-content {

@@ -278,14 +278,15 @@ function getBuyUrlFromLocation() {
 }
 
 function updateBuyNowLink() {
+    const box = document.getElementById('buyNowBox');
     const link = document.getElementById('buyNowLink');
     const buyUrl = getBuyUrlFromLocation();
     if (buyUrl && isBuyWindow()) {
         link.href = buyUrl;
-        link.classList.remove('hidden');
+        box.classList.remove('hidden');
     } else {
         link.removeAttribute('href');
-        link.classList.add('hidden');
+        box.classList.add('hidden');
     }
 }
 
