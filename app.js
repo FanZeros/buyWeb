@@ -308,6 +308,38 @@ function handleHash() {
     return false;
 }
 
+const contactModal = document.getElementById('contactModal');
+const contactClose = document.getElementById('contactClose');
+
+function openContact() {
+    contactModal.classList.remove('hidden');
+}
+
+function closeContact() {
+    contactModal.classList.add('hidden');
+}
+
+document.querySelectorAll('.contact-trigger').forEach(btn => {
+    btn.addEventListener('click', openContact);
+});
+
+contactClose.addEventListener('click', closeContact);
+contactModal.addEventListener('click', (e) => {
+    if (e.target === contactModal) closeContact();
+});
+
+document.querySelectorAll('.copy-wechat').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const wechat = btn.dataset.wechat;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(wechat).then(() => {
+                btn.textContent = '已复制微信号';
+                setTimeout(() => { btn.textContent = wechat; }, 1500);
+            });
+        }
+    });
+});
+
 window.addEventListener('hashchange', handleHash);
 window.addEventListener('popstate', updateBuyNowLink);
 

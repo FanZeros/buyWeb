@@ -52,7 +52,7 @@
                     <span class="step-icon">3</span>
                     <div>
                         <strong>加群联系作者</strong>
-                        <p>加入QQ群后，私聊作者<strong>零殇</strong>发送截图并告知想兑换的内容</p>
+                        <p>加入QQ群后，私聊作者<button type="button" class="contact-trigger">零殇</button>发送截图并告知想兑换的内容</p>
                     </div>
                 </li>
             </ol>
@@ -80,7 +80,7 @@
                 </li>
                 <li>
                     <span class="rule-icon ok">&#10003;</span>
-                    <span>提交截图即视为授权零殇用于公益宣传展示</span>
+                    <span>提交截图即视为授权<button type="button" class="contact-trigger">零殇</button>用于公益宣传展示</span>
                 </li>
                 <li>
                     <span class="rule-icon no">&#10007;</span>
@@ -105,11 +105,11 @@
             </details>
             <details>
                 <summary>哪些公益机构的捐款有效？</summary>
-                <p>任何正规注册的公益慈善机构均可，包括但不限于：腾讯公益、支付宝公益、壹基金、中国扶贫基金会等。如果不知道如何捐款，也可以私聊零殇咨询。</p>
+                <p>任何正规注册的公益慈善机构均可，包括但不限于：腾讯公益、支付宝公益、壹基金、中国扶贫基金会等。如果不知道如何捐款，也可以私聊<button type="button" class="contact-trigger">零殇</button>咨询。</p>
             </details>
             <details>
                 <summary>兑换需要多久处理？</summary>
-                <p>私聊零殇后，通常 1-3 个工作日内完成审核并发放。</p>
+                <p>私聊<button type="button" class="contact-trigger">零殇</button>后，通常 1-3 个工作日内完成审核并发放。</p>
             </details>
             <details>
                 <summary>截图会被用在哪里？</summary>
@@ -117,7 +117,7 @@
             </details>
             <details>
                 <summary>我找不到零殇怎么办？</summary>
-                <p>加入QQ群后，群主/管理员即为零殇，也可在群内@零殇。QQ：2692762586，微信：fanzero7916</p>
+                <p>加入QQ群后，群主/管理员即为<button type="button" class="contact-trigger">零殇</button>，也可在群内@零殇。</p>
             </details>
         </div>
     </section>
@@ -155,8 +155,18 @@
     <footer>
         <p>&copy; 2026 魔塔游戏系列 | 捐款代替购买计划</p>
         <p class="footer-note">本活动旨在鼓励玩家参与公益，用善举解锁游戏内容</p>
-        <p class="footer-note">如有疑问请联系零殇（QQ：2692762586 / 微信：fanzero7916）</p>
+        <p class="footer-note">如有疑问请联系<button type="button" class="contact-trigger">零殇</button></p>
     </footer>
+
+    <div class="contact-modal hidden" id="contactModal">
+        <div class="contact-panel">
+            <h3>联系零殇</h3>
+            <p>QQ：<a href="tencent://message/?uin=2692762586">2692762586</a></p>
+            <p>微信：<button type="button" class="copy-wechat" data-wechat="fanzero7916">fanzero7916</button></p>
+            <a href="http://zeros.group/group/" target="_blank" class="contact-group">加入QQ群</a>
+            <button type="button" class="contact-close" id="contactClose">关闭</button>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
