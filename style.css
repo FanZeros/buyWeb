@@ -69,6 +69,27 @@ body {
     position: relative;
 }
 
+.buy-now-link {
+    display: block;
+    position: relative;
+    margin: 1.4rem auto 0;
+    max-width: 640px;
+    padding: 1rem 1.2rem;
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #fff;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 14px;
+    letter-spacing: 0.01em;
+}
+
+.buy-now-link.hidden {
+    display: none;
+}
+
 /* ===== 标签导航 ===== */
 .tab-nav {
     display: flex;
@@ -192,19 +213,7 @@ body {
     margin-top: 1.5rem;
 }
 
-.buy-now-link {
-    display: block;
-    text-align: center;
-    margin-top: 0.85rem;
-    font-size: 0.88rem;
-    color: var(--primary);
-    text-decoration: underline;
-    line-height: 1.5;
-}
 
-.buy-now-link.hidden {
-    display: none;
-}
 
 /* ===== 规则列表 ===== */
 .rule-list {
@@ -688,6 +697,11 @@ footer {
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .buy-now-link {
+        font-size: 1.7rem;
+        max-width: 720px;
     }
 
     .tab-content {
