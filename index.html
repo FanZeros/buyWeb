@@ -23,6 +23,10 @@
 
     <!-- 兑换页面 -->
     <section id="redeem" class="tab-content active">
+        <div class="card pick-summary hidden" id="pickSummary">
+            <h2>本次想兑换</h2>
+            <p id="pickSummaryText"></p>
+        </div>
         <div class="card how-it-works">
             <h2>如何兑换</h2>
             <ol class="steps">
@@ -30,7 +34,7 @@
                     <span class="step-icon">1</span>
                     <div>
                         <strong>进行公益捐款</strong>
-                        <p>向任意正规公益机构捐款（不限金额）</p>
+                        <p>向任意正规公益机构捐款，金额达到所选内容的标价即可</p>
                     </div>
                 </li>
                 <li>
@@ -131,6 +135,16 @@
             <!-- 动态生成 -->
         </div>
     </section>
+
+    <div class="pick-bar" id="pickBar">
+        <div class="pick-names" id="pickNames"></div>
+        <div class="pick-row">
+            <span class="pick-count">已选 <strong id="pickCount">0</strong> 项</span>
+            <span class="pick-total">需捐款 <strong id="pickTotal"></strong></span>
+            <button type="button" class="pick-clear" id="pickClear">清空</button>
+            <button type="button" class="pick-go" id="pickGo">去兑换</button>
+        </div>
+    </div>
 
 
 

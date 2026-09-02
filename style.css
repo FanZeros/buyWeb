@@ -465,6 +465,117 @@ body {
     grid-column: 1 / -1;
 }
 
+.shop-item.selectable {
+    cursor: pointer;
+}
+
+.shop-item.selected {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.18), var(--shadow-md);
+    background: linear-gradient(180deg, #ffffff 0%, #f5f4ff 100%);
+}
+
+.shop-item.selected::after {
+    content: '\2713';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-item.selectable {
+    cursor: pointer;
+}
+
+.sub-item.selected {
+    background: rgba(99, 102, 241, 0.08);
+}
+
+.sub-item.selected .sub-item-name {
+    color: var(--primary);
+}
+
+/* ===== 底部已选栏 ===== */
+.pick-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 80;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(99, 102, 241, 0.18);
+    box-shadow: 0 -8px 24px rgba(15, 23, 42, 0.08);
+    transform: translateY(110%);
+    transition: transform 0.25s ease;
+}
+
+.pick-bar.visible {
+    transform: translateY(0);
+}
+
+.pick-names {
+    padding: 0.5rem 1rem 0.25rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    text-align: center;
+    max-height: 48px;
+    overflow-y: auto;
+}
+
+.pick-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    padding: 0.55rem 1rem 0.8rem;
+}
+
+.pick-count,
+.pick-total {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.pick-count strong,
+.pick-total strong {
+    color: var(--primary);
+}
+
+.pick-clear,
+.pick-go {
+    border: none;
+    border-radius: 16px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pick-clear {
+    background: #f1f5f9;
+    color: var(--text-secondary);
+}
+
+.pick-go {
+    background: linear-gradient(135deg, var(--primary), #8b5cf6);
+    color: #fff;
+}
+
+body.has-pick {
+    padding-bottom: 96px;
+}
+
 .shop-item .item-details {
     margin-bottom: 0.6rem;
     border: 1px solid var(--border);

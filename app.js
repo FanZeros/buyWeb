@@ -16,7 +16,7 @@ const shopItems = [
         { name: "永久自选+4", desc: "额外+4个", price: 55.55 },
         { name: "永久自选+10", desc: "额外+10个", price: 133.32 },
     ] },
-    { series: "dungeon", name: "购买定制技能装备", desc: "无需消耗自选点数，购买后菜单一键兑换。详情下载表格查看", price: "60起", redeemable: true, link: "http://zeros.group/dz.xlsx" },
+    { series: "dungeon", name: "购买定制技能装备", desc: "无需消耗自选点数，购买后菜单一键兑换。点卡片进入定制商店选购", price: "60起", redeemable: true, link: "http://zeros.group/dz/" },
     { series: "dungeon", name: "支持者包【角色+DLC】", desc: "解锁全部35+角色 + 7个DLC + 初始奖励15级 + 游戏CG解锁", price: 40.88, redeemable: true, details: "【角色直接解锁】刺客、魔法师、召唤师、亡灵术士、骑士、光明之魂、昆仑仙女、牧师、夜行义贼、九州帝皇、占卜师、圣女、公会主席、妖狐、文脉传承者、道法使徒、亚斯、森之精灵、狂战士、魔法少女、追光剑士、商人、炼金术师、乐子仙人、狩魔人、堕天幻剑、吸血鬼、沙漠猎人、空桑掌门、百花谷主、界青暗主、记录员、试验机器人一号、幻想召唤师、血之舞 + 后续新角色\n【DLC直接解锁】初始装备宝箱、额外BOSS地图、困难系数、技能树模式、天空之城、火山内部、极寒之地\n【初始奖励】等级解锁至15级\n【游戏CG解锁】剑士_王国冒险者、刺客_屋檐隐狼、魔法师_秘法前召、召唤师_月夜兔兔/密林环蛇、亡灵术士_塔楼幽灵、光明之魂_史莱姆剑、牧师_教堂绿影、圣女_圣神之剑、占卜师_星空占卜、工会主席_枪械精通/夜雪奋战、妖狐_草地暖阳/雪夜冷狐 等" },
     { series: "dungeon", name: "大力支持礼包", desc: "一次发电永久使用！9万灵魂+角色+DLC+钥匙包+装备栏×3+强力装备+内测资格+致谢名单", price: 48.88, redeemable: true, details: "仅可在【魔塔地牢系列 + 薛定谔迷宫】中使用，此兑换码无法在6勇者系列使用！\n\n1. 灵魂×90000\n2. 角色解锁：光明之魂、昆仑仙女、夜行义贼、牧师、九州帝皇、占卜师\n3. 游戏DLC：魔王的宝藏、天空之城、额外BOSS大地图、困难模式、自定义种子功能\n4. 永久钥匙包：蓝钥匙×1 + 黄钥匙×4（每局需点击一键兑换）\n5. 装备栏永久解锁×3（提前解锁）\n6. 三件强力装备：破魔刀、隐形护盾、双刀\n7. Zeros游戏内测资格\n\n额外追加：\n· 加入游戏致谢名单\n· 黑暗能量5w（用于升级黑化角色能力）\n· 额外角色兑换码追加\n\n以及之后可能补充的其他奖励" },
     { series: "dungeon", name: "强力支持包【全内容】", desc: "一次发电永久使用！月卡+永久双倍灵魂+钥匙包+装备+全角色+全DLC+CG+9万灵魂+内测资格", price: 98.88, redeemable: true, details: "一次对作者开发游戏的强力支持，一次发电永久使用！\n仅可在【魔塔地牢系列 + 薛定谔迷宫】中使用\n\n1.「地牢探险者」月卡：360碎片 + 30日时长，灵魂×2 + 每日12碎片，薛定谔迷宫2倍离线收益&最长24h\n2. 永久双倍灵魂获取（月卡期间为4倍）注：与Steam购买的双倍不叠加\n3. 永久钥匙包：蓝钥匙×1 + 黄钥匙×4（每局需点击一键兑换）\n4. 永久强力装备 + 装备栏×3：蒸汽戒指[Ex]、双刀、破魔刀、隐形护盾、发光的金色白菜、m60pro、龙年限定红龙坐骑\n5. 全角色直接解锁：刺客/魔法师/召唤师/亡灵术士/骑士/光明之魂/昆仑仙女/牧师/夜行义贼/九州帝皇/占卜师/圣女/公会主席/妖狐/文脉传承者/道法使徒/亚斯/森之精灵/狂战士/魔法少女/追光剑士/商人/炼金术师/乐子仙人/狩魔人/堕天幻剑/吸血鬼...（含所有角色，新角色一个月内追加）\n6. 全DLC解锁：初始装备宝箱、额外BOSS地图、困难系数、技能树模式、天空之城、火山内部、极寒之地、浅水沼泽\n7. 初始奖励等级解锁至15级\n8. 游戏CG全部解锁（14张）\n9. 九万灵魂\n10. 游戏内测资格\n11. 版本追加奖励自动补领（450+碎片）\n\n以及之后可能补充的其他奖励" },
@@ -87,28 +87,106 @@ function formatPrice(price) {
     return `<span class="donate-icon">&#9829;</span> ${price}`;
 }
 
+function parsePrice(price) {
+    if (typeof price === 'number') return price;
+    if (typeof price === 'string') {
+        const n = parseFloat(price);
+        return isNaN(n) ? 0 : n;
+    }
+    return 0;
+}
+
+function itemKey(index, subIndex) {
+    return subIndex === undefined ? String(index) : index + '-' + subIndex;
+}
+
+const selectedKeys = new Set();
+
+function isSelected(index, subIndex) {
+    return selectedKeys.has(itemKey(index, subIndex));
+}
+
+function toggleSelected(index, subIndex) {
+    const key = itemKey(index, subIndex);
+    if (selectedKeys.has(key)) selectedKeys.delete(key);
+    else selectedKeys.add(key);
+    updatePickBar();
+    syncSelectedClass();
+}
+
+function getSelectedList() {
+    const list = [];
+    selectedKeys.forEach(key => {
+        const parts = key.split('-');
+        const index = parseInt(parts[0], 10);
+        const item = shopItems[index];
+        if (!item) return;
+        if (parts[1] !== undefined) {
+            const sub = item.subItems && item.subItems[parseInt(parts[1], 10)];
+            if (sub) list.push({ name: sub.name, price: sub.price });
+        } else {
+            list.push({ name: item.name, price: item.price });
+        }
+    });
+    return list;
+}
+
+function updatePickBar() {
+    const list = getSelectedList();
+    const pickBar = document.getElementById('pickBar');
+    const pickNames = document.getElementById('pickNames');
+    const pickCount = document.getElementById('pickCount');
+    const pickTotal = document.getElementById('pickTotal');
+    const pickSummary = document.getElementById('pickSummary');
+    const pickSummaryText = document.getElementById('pickSummaryText');
+    if (list.length === 0) {
+        pickBar.classList.remove('visible');
+        document.body.classList.remove('has-pick');
+        pickSummary.classList.add('hidden');
+        return;
+    }
+    const total = list.reduce((sum, it) => sum + parsePrice(it.price), 0);
+    const hasFrom = list.some(it => typeof it.price === 'string' && it.price.indexOf('起') !== -1);
+    const totalText = hasFrom ? total.toFixed(2).replace(/\.00$/, '') + '起' : Number(total.toFixed(2));
+    pickNames.textContent = list.map(it => it.name).join(' · ');
+    pickCount.textContent = String(list.length);
+    pickTotal.innerHTML = formatPrice(totalText);
+    pickBar.classList.add('visible');
+    document.body.classList.add('has-pick');
+    pickSummary.classList.remove('hidden');
+    pickSummaryText.innerHTML = list.map(it => it.name).join(' · ') + '<br>需捐款 ' + formatPrice(totalText);
+}
+
+function syncSelectedClass() {
+    shopGrid.querySelectorAll('[data-pick]').forEach(el => {
+        el.classList.toggle('selected', selectedKeys.has(el.dataset.pick));
+    });
+}
+
 function renderShop(series) {
     const items = series === 'all'
-        ? shopItems
-        : shopItems.filter(item => item.series === series || (item.tags && item.tags.includes(series)));
-    shopGrid.innerHTML = items.map(item => `
-        <div class="shop-item ${item.subItems ? 'has-subitems' : ''}" data-series="${item.series}">
+        ? shopItems.map((item, index) => ({ item, index }))
+        : shopItems.map((item, index) => ({ item, index }))
+            .filter(({ item }) => item.series === series || (item.tags && item.tags.includes(series)));
+    shopGrid.innerHTML = items.map(({ item, index }) => `
+        <div class="shop-item ${item.subItems ? 'has-subitems' : ''} ${item.link ? 'external' : 'selectable'}" data-series="${item.series}" data-index="${index}" ${item.link || item.subItems ? '' : `data-pick="${index}"`}>
             <span class="item-series">${seriesNames[item.series]}</span>
             <div class="item-name">${item.name}</div>
             <div class="item-desc">${item.desc}</div>
-            ${item.subItems ? `<div class="sub-items">${item.subItems.map(sub => `
-                <div class="sub-item">
+            ${item.subItems ? `<div class="sub-items">${item.subItems.map((sub, subIndex) => `
+                <div class="sub-item selectable" data-pick="${index}-${subIndex}">
                     <span class="sub-item-name">${sub.name}</span>
                     <span class="sub-item-desc">${sub.desc}</span>
                     <span class="sub-item-price">${formatPrice(sub.price)}</span>
                 </div>
             `).join('')}</div>` : ''}
             ${item.details ? `<details class="item-details"><summary>查看详细内容</summary><div class="item-details-content">${item.details.replace(/\n/g, '<br>')}</div></details>` : ''}
-            ${item.link ? `<a class="item-link" href="${item.link}" target="_blank">下载详情表格</a>` : ''}
+            ${item.link ? `<a class="item-link" href="${item.link}" target="_blank">打开定制商店选购</a>` : ''}
             ${item.price ? `<div class="item-price">${formatPrice(item.price)}</div>` : ''}
             ${item.redeemable ? '<span class="redeem-badge">可捐款兑换</span>' : ''}
         </div>
     `).join('');
+    syncSelectedClass();
 }
 
 const seriesDesc = document.getElementById('seriesDesc');
@@ -131,12 +209,39 @@ filterBtns.forEach(btn => {
     btn.addEventListener('click', () => switchFilter(btn.dataset.series));
 });
 
-// ===== "可捐款兑换"点击跳转到兑换页 =====
 shopGrid.addEventListener('click', (e) => {
+    if (e.target.closest('a, summary, details, .item-details')) return;
+
+    const sub = e.target.closest('.sub-item.selectable');
+    if (sub && sub.dataset.pick) {
+        const parts = sub.dataset.pick.split('-');
+        toggleSelected(parseInt(parts[0], 10), parseInt(parts[1], 10));
+        return;
+    }
+
+    const card = e.target.closest('.shop-item');
+    if (!card) return;
+
     if (e.target.classList.contains('redeem-badge')) {
         switchTab('redeem');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
     }
+
+    if (card.dataset.pick) {
+        toggleSelected(parseInt(card.dataset.pick, 10));
+    }
+});
+
+document.getElementById('pickClear').addEventListener('click', () => {
+    selectedKeys.clear();
+    updatePickBar();
+    syncSelectedClass();
+});
+
+document.getElementById('pickGo').addEventListener('click', () => {
+    switchTab('redeem');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // ===== URL hash 路由 =====
