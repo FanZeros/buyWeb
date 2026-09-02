@@ -331,10 +331,11 @@ contactModal.addEventListener('click', (e) => {
 document.querySelectorAll('.copy-wechat').forEach(btn => {
     btn.addEventListener('click', () => {
         const wechat = btn.dataset.wechat;
+        const valueEl = btn.querySelector('.contact-value');
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(wechat).then(() => {
-                btn.textContent = '已复制微信号';
-                setTimeout(() => { btn.textContent = wechat; }, 1500);
+                if (valueEl) valueEl.textContent = '已复制';
+                setTimeout(() => { if (valueEl) valueEl.textContent = wechat; }, 1500);
             });
         }
     });

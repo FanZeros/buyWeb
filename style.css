@@ -706,13 +706,14 @@ footer {
 
 .contact-trigger {
     display: inline;
-    padding: 0;
+    padding: 0 1px;
     border: none;
     background: none;
-    color: var(--primary);
+    color: #7c3aed;
     font: inherit;
-    font-weight: 700;
-    text-decoration: underline;
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 1.5px dashed #a78bfa;
     cursor: pointer;
 }
 
@@ -721,10 +722,10 @@ footer {
     inset: 0;
     z-index: 200;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    padding: 1rem;
-    background: rgba(15, 23, 42, 0.55);
+    padding: 0;
+    background: rgba(15, 23, 42, 0.45);
 }
 
 .contact-modal.hidden {
@@ -733,44 +734,79 @@ footer {
 
 .contact-panel {
     width: 100%;
-    max-width: 320px;
-    background: #fff;
-    border-radius: 16px;
-    padding: 1.4rem 1.3rem 1.2rem;
+    max-width: 420px;
+    background: linear-gradient(180deg, #faf5ff 0%, #ffffff 38%);
+    border-radius: 20px 20px 0 0;
+    padding: 1.4rem 1.2rem 1.3rem;
     text-align: center;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 -8px 32px rgba(88, 28, 135, 0.18);
+}
+
+.contact-avatar {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 0.6rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    font-weight: 800;
 }
 
 .contact-panel h3 {
-    margin-bottom: 0.8rem;
-    font-size: 1.15rem;
+    margin-bottom: 0.15rem;
+    font-size: 1.2rem;
 }
 
-.contact-panel p {
-    margin-bottom: 0.45rem;
-    font-size: 0.95rem;
-    color: var(--text);
+.contact-role {
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    color: #7c3aed;
 }
 
-.contact-panel a,
-.copy-wechat {
-    color: var(--primary);
-    font-weight: 700;
-    background: none;
-    border: none;
-    padding: 0;
+.contact-list {
+    display: grid;
+    gap: 0.6rem;
+    margin-bottom: 0.9rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #ede9fe;
+    border-radius: 12px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
     font: inherit;
     cursor: pointer;
-    text-decoration: underline;
+}
+
+.contact-label {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.contact-value {
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: #5b21b6;
 }
 
 .contact-group,
 .contact-close {
     display: block;
     width: 100%;
-    margin-top: 0.7rem;
-    padding: 0.7rem;
-    border-radius: 10px;
+    margin-top: 0.55rem;
+    padding: 0.8rem;
+    border-radius: 12px;
     font-size: 0.95rem;
     font-weight: 700;
     text-decoration: none;
@@ -779,13 +815,24 @@ footer {
 }
 
 .contact-group {
-    background: linear-gradient(135deg, var(--primary), #8b5cf6);
+    background: linear-gradient(135deg, #7c3aed, #db2777);
     color: #fff;
 }
 
 .contact-close {
-    background: #f1f5f9;
-    color: var(--text-secondary);
+    background: #f5f3ff;
+    color: #6b7280;
+}
+
+@media (min-width: 480px) {
+    .contact-modal {
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .contact-panel {
+        border-radius: 20px;
+    }
 }
 
 /* ===== 响应式 ===== */
