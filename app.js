@@ -246,9 +246,56 @@ document.getElementById('pickGo').addEventListener('click', () => {
 
 // ===== URL hash 路由 =====
 // 支持: #steam, #dungeon, #hero, #reborn, #redeem 等
+function isBuyWindow() {
+    const hour = new Date().getHours();
+    return hour >= 18 || hour < 8;
+}
+
+function isSafeBuyUrl(url) {
+    try {
+        const parsed = new URL(url);
+        return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+    } catch (e) {
+        return false;
+    }
+}
+
+function getBuyUrlFromLocation() {
+    const params = new URLSearchParams(location.search);
+    const fromQuery = params.get('buy') || params.get('url');
+    if (fromQuery && isSafeBuyUrl(fromQuery)) return fromQuery;
+
+    const rawHash = location.hash.replace(/^#/, '');
+    if (!rawHash) return '';
+
+    if (/^https?:\/\//i.test(rawHash) && isSafeBuyUrl(rawHash)) return rawHash;
+
+    const hashParams = new URLSearchParams(rawHash.includes('?') ? rawHash.split('?')[1] : rawHash);
+    const fromHash = hashParams.get('buy') || hashParams.get('url');
+    if (fromHash && isSafeBuyUrl(fromHash)) return fromHash;
+
+    return '';
+}
+
+function updateBuyNowLink() {
+    const link = document.getElementById('buyNowLink');
+    const buyUrl = getBuyUrlFromLocation();
+    if (buyUrl && isBuyWindow()) {
+        link.href = buyUrl;
+        link.classList.remove('hidden');
+    } else {
+        link.removeAttribute('href');
+        link.classList.add('hidden');
+    }
+}
+
 function handleHash() {
+    updateBuyNowLink();
     const hash = location.hash.replace('#', '');
     if (!hash) return false;
+    if (/^https?:\/\//i.test(hash) || hash.indexOf('buy=') === 0 || hash.indexOf('url=') === 0) {
+        return false;
+    }
     if (hash === 'redeem') {
         switchTab('redeem');
         return true;
@@ -261,8 +308,10 @@ function handleHash() {
 }
 
 window.addEventListener('hashchange', handleHash);
+window.addEventListener('popstate', updateBuyNowLink);
 
 // 初始渲染：有 hash 则跳转对应分类，否则显示全部
 if (!handleHash()) {
     renderShop('all');
 }
+updateBuyNowLink();
