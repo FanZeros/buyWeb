@@ -334,16 +334,31 @@ contactModal.addEventListener('click', (e) => {
     if (e.target === contactModal) closeContact();
 });
 
-document.querySelectorAll('.copy-wechat').forEach(btn => {
+function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+    }
+    const input = document.createElement('textarea');
+    input.value = text;
+    input.setAttribute('readonly', '');
+    input.style.position = 'fixed';
+    input.style.left = '-9999px';
+    document.body.appendChild(input);
+    input.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(input);
+    return Promise.resolve();
+}
+
+document.querySelectorAll('.copy-contact').forEach(btn => {
     btn.addEventListener('click', () => {
-        const wechat = btn.dataset.wechat;
-        const valueEl = btn.querySelector('.contact-value');
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(wechat).then(() => {
-                if (valueEl) valueEl.textContent = '已复制';
-                setTimeout(() => { if (valueEl) valueEl.textContent = wechat; }, 1500);
-            });
-        }
+        const text = btn.dataset.copy;
+        const original = btn.querySelector('.contact-value').textContent;
+        copyText(text).then(() => {
+            const valueEl = btn.querySelector('.contact-value');
+            if (valueEl) valueEl.textContent = '已复制';
+            setTimeout(() => { if (valueEl) valueEl.textContent = original; }, 1500);
+        });
     });
 });
 
