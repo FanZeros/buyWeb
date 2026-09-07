@@ -715,12 +715,15 @@ footer {
     text-decoration: none;
     border-bottom: 1.5px dashed #a78bfa;
     cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    z-index: 2;
 }
 
 .contact-modal {
     position: fixed;
     inset: 0;
-    z-index: 200;
+    z-index: 9999;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -729,7 +732,7 @@ footer {
 }
 
 .contact-modal.hidden {
-    display: none;
+    display: none !important;
 }
 
 .contact-panel {

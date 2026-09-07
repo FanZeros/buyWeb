@@ -312,15 +312,21 @@ const contactModal = document.getElementById('contactModal');
 const contactClose = document.getElementById('contactClose');
 
 function openContact() {
+    if (!contactModal) return;
     contactModal.classList.remove('hidden');
 }
 
 function closeContact() {
+    if (!contactModal) return;
     contactModal.classList.add('hidden');
 }
 
-document.querySelectorAll('.contact-trigger').forEach(btn => {
-    btn.addEventListener('click', openContact);
+document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.contact-trigger');
+    if (!trigger) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openContact();
 });
 
 contactClose.addEventListener('click', closeContact);
