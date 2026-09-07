@@ -39,9 +39,10 @@ const shopItems = [
     { series: "dungeon", tags: ["dungeon", "steam"], name: "魔塔地牢 Steam激活码", desc: "Steam游戏激活码兑换", price: 15, redeemable: true },
     { series: "dungeon", tags: ["dungeon", "steam"], name: "薛定谔迷宫 Steam激活码", desc: "Steam游戏激活码兑换", price: 11.88, redeemable: true },
     { series: "reborn", tags: ["reborn", "steam"], name: "转生魔塔 Steam激活码", desc: "Steam游戏激活码兑换", price: 18, redeemable: true },
+    { series: "other", tags: ["other", "steam"], name: "挖穿地球 Steam激活码", desc: "Steam游戏激活码兑换", price: 18, redeemable: true },
 
     // 其他系列
-    { series: "other", name: "敬请期待", desc: "更多内容筹备中...", price: "", redeemable: false },
+    { series: "other", name: "永久免广告卡", desc: "免广告次数10000 + 所有星球解锁", price: 30, redeemable: true },
 ];
 
 const seriesNames = {
@@ -58,6 +59,7 @@ const seriesDescriptions = {
     hero: "包含：魔塔与6勇者、魔勇亡灵术士、魔塔勇者xx篇",
     reborn: "包含：转生魔塔",
     steam: "Zeros游戏 Steam 平台激活码",
+    other: "包含：挖穿地球",
 };
 
 // ===== 标签切换 =====
