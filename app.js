@@ -42,7 +42,7 @@ const shopItems = [
     { series: "earth", tags: ["earth", "steam"], name: "挖穿地球 Steam激活码", desc: "Steam游戏激活码兑换", price: 18, redeemable: true },
 
     // 挖穿地球系列
-    { series: "earth", name: "永久免广告卡", desc: "免广告次数10000 + 所有星球解锁", price: 30, redeemable: true },
+    { series: "earth", name: "挖穿地球 永久免广告卡", desc: "挖穿地球：免广告次数10000 + 所有星球解锁", price: 30, redeemable: true },
 ];
 
 const seriesNames = {
