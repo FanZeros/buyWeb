@@ -39,18 +39,18 @@ const shopItems = [
     { series: "dungeon", tags: ["dungeon", "steam"], name: "魔塔地牢 Steam激活码", desc: "Steam游戏激活码兑换", price: 15, redeemable: true },
     { series: "dungeon", tags: ["dungeon", "steam"], name: "薛定谔迷宫 Steam激活码", desc: "Steam游戏激活码兑换", price: 11.88, redeemable: true },
     { series: "reborn", tags: ["reborn", "steam"], name: "转生魔塔 Steam激活码", desc: "Steam游戏激活码兑换", price: 18, redeemable: true },
-    { series: "other", tags: ["other", "steam"], name: "挖穿地球 Steam激活码", desc: "Steam游戏激活码兑换", price: 18, redeemable: true },
+    { series: "earth", tags: ["earth", "steam"], name: "挖穿地球 Steam激活码", desc: "Steam游戏激活码兑换", price: 18, redeemable: true },
 
-    // 其他系列
-    { series: "other", name: "永久免广告卡", desc: "免广告次数10000 + 所有星球解锁", price: 30, redeemable: true },
+    // 挖穿地球系列
+    { series: "earth", name: "永久免广告卡", desc: "免广告次数10000 + 所有星球解锁", price: 30, redeemable: true },
 ];
 
 const seriesNames = {
     dungeon: "魔塔地牢",
     hero: "魔塔勇者",
     reborn: "转生魔塔",
-    steam: "激活码",
-    other: "其他系列"
+    earth: "挖穿地球",
+    steam: "激活码"
 };
 
 // ===== 系列说明 =====
@@ -58,8 +58,8 @@ const seriesDescriptions = {
     dungeon: "包含：地牢C/魔塔地牢2、薛定谔迷宫、魔塔地牢角色外传、拾取宝石1/2",
     hero: "包含：魔塔与6勇者、魔勇亡灵术士、魔塔勇者xx篇",
     reborn: "包含：转生魔塔",
+    earth: "包含：挖穿地球",
     steam: "Zeros游戏 Steam 平台激活码",
-    other: "包含：挖穿地球",
 };
 
 // ===== 标签切换 =====
